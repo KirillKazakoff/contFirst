@@ -4,6 +4,11 @@ export default class Team {
     }
 
     add(character) {
+        this.members.forEach((element) => {
+            if (element === character) {
+                throw new Error('you have the same element in set');
+            }
+        });
         this.members.add(character);
     }
 

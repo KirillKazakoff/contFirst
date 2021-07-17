@@ -21,9 +21,17 @@ test('add method check', () => {
     const team = new Team();
 
     team.add(charList[0]);
-    team.add(charList[0]);
     team.add(charList[1]);
     expect(team.members).toEqual(expected);
+});
+
+test('add method check', () => {
+    const check = () => {
+        const team = new Team();
+        team.add(charList[0]);
+        team.add(charList[0]);
+    };
+    expect(check).toThrow('you have the same element in set');
 });
 
 test('addAll method check', () => {
